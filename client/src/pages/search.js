@@ -45,6 +45,7 @@ class Search extends Component {
         API.saveBook(data)
         .then(res => console.log(res))
         .catch(err => console.log(err))
+        alert("Book saved. Check the Bookshelf.")
     }
 
     render() {
