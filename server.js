@@ -1,17 +1,18 @@
-import express from "express";
-import path  from "path";
-import mongoose from "mongoose";
-import routes from "./routes/apiroutes"
-const PORT = process.env.PORT || 3001;
-
+const express = require("express");
+const path  = require("path");
+const mongoose = require("mongoose");
+const routes = require("./routes");
+const PORT = process.env.PORT || 4500;
 const app = express();
+
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
-  }
+  };
+  
 app.use(routes)
 
 // connection to mongoose:
